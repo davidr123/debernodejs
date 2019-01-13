@@ -19,28 +19,18 @@ app.get('/',function(req, res){
     res.render('home');
 });
 
-app.get('/user',function(req, res){
+app.get('/person',function(req, res){
    /* res.type('text/plain');
     res.send('Mi página principal');*/
-    knex('usuario')
+    knex('persona')
     .select()
-    .then(usuario =>{
-        res.render('usuario', {objUsers: usuario});
+    .then(persona =>{
+        res.render('person', {objPersona: persona});
     });
     
    // res.render('usuario');
 });
 
-
-
-
-
-
-app.get('/about',function(req,res){
-    /*res.type('text/plain');
-    res.send('About my page');*/
-    res.render('about');
-});
 
 
         app.listen(app.get('port'), function(){
